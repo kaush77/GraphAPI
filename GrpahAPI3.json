@@ -21,41 +21,8 @@
 					"text/json",
 					"application/json"
 				],
-				"parameters": [],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"$ref": "#/definitions/GraphUser"
-						}
-					}
-				},
-				"deprecated": false
-			}
-		},
-		"/v1.0/users/{userid}": {
-			"get": {
-				"tags": [
-					"users.user"
-				],
-				"operationId": "users",
-				"consumes": [],
-				"produces": [
-					"text/json",
-					"application/json"
-				],
 				"parameters": [
-				  {
-					"name": "userid",
-					"in": "path",
-					"description": "key: user-id",
-					"required": true,
-					"schema": {
-					  "type": "string"
-					},
-					"x-ms-docs-key-type": "userid"
-				  },
-				  {
+					{
 					"name": "$select",
 					"in": "query",
 					"description": "Select properties to be returned",
@@ -75,13 +42,13 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/components/schemas/microsoft.graph.user"
+							"$ref": "#/definitions/GraphUser"
 						}
 					}
 				},
 				"deprecated": false
 			}
-		}
+		}, 
 	},
 
 	"definitions": {
