@@ -49,7 +49,8 @@
 					"name": "userid",
 					"in": "path",
 					"description": "key: userid",
-					"required": true, 
+					"required": true,
+					"type": "string"
 				  },
 				  {
 					"name": "onPremisesExtensionAttributes",
