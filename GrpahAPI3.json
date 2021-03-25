@@ -33,7 +33,7 @@
 				"deprecated": false
 			}
 		},
-		"/v1.0/users/{userPrincipalName}": {
+		"/v1.0/users/{userid}": {
 			"get": {
 				"tags": [
 					"users.user"
@@ -46,33 +46,12 @@
 				],
 				"parameters": [
 				  {
-					"name": "user-id",
+					"name": "userid",
 					"in": "path",
-					"description": "key: user-id",
 					"required": true,
-					"schema": {
-					  "type": "string"
-					},
-					"x-ms-docs-key-type": "user"
+					"type": "string"
 				  }
 				],
-				"requestBody": {
-				  "description": "Action parameters",
-				  "content": {
-					"application/json": {
-					  "schema": {
-						"type": "object",
-						"properties": {
-						  "userPrincipalName": {
-							"type": "string",
-							"nullable": true
-						  }
-						}
-					  }
-					}
-				  },
-				"required": true,
-				},
 				"responses": {
 					"200": {
 						"description": "OK",
