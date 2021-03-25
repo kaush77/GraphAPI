@@ -32,6 +32,29 @@
 				},
 				"deprecated": false
 			}
+		},
+		"/v1.0/users/{id | userPrincipalName}": {
+			"get": {
+				"tags": [
+					"users.user"
+				],
+				"operationId": "Me",
+				"consumes": [],
+				"produces": [
+					"text/json",
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/GraphUser"
+						}
+					}
+				},
+				"deprecated": false
+			}
 		}
 	},
 
