@@ -79,9 +79,14 @@
 				"userPrincipalName": {
 					"type": "string"
 				},
-				"extensionAttribute1":{
-					"type": "string"
-				}
+				"onPremisesExtensionAttributes":{
+				 "type":"object",
+				 "properties":{
+					"extensionAttribute1":{
+					   "type":"string"
+					}
+				 }
+			  }
 			}
 
 		}
