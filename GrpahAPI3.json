@@ -46,14 +46,14 @@
 				],
 				"parameters": [
 				  {
-					"name": "user-id",
-            "in": "path",
-            "description": "key: user-id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-ms-docs-key-type": "user"
+					"name": "userid",
+					"in": "path",
+					"description": "key: userid",
+					"required": true,
+					"schema": {
+					  "type": "string"
+					},
+					"x-ms-docs-key-type": "user"
 				  },
 				  {
 					"name": "$select",
@@ -102,6 +102,9 @@
 		"GraphUser": {
 			"type": "object",
 			"properties": {
+				"userid": {
+					"type": "string"
+				},
 				"companyName": {
 					"type": "string"
 				},
