@@ -33,64 +33,342 @@
 				"deprecated": false
 			}
 		},
-		"/v1.0/users/{userid}": {
-			"get": {
-				"tags": [
-					"users.user"
-				],
-				"operationId": "users",
-				"consumes": [],
-				"produces": [
-					"text/json",
-					"application/json"
-				],
-				"parameters": [
-				  {
-					"name": "userid",
-					"in": "path",
-					"description": "key: user-id",
-					"required": true,
-					"schema": {
-					  "type": "string"
-					},
-					"x-ms-docs-key-type": "user"
-				  },
-				  {
-					"name": "$select",
-					"in": "query",
-					"description": "Select properties to be returned",
-					"schema": {
-					  "uniqueItems": true,
-					  "type": "array",
-					  "items": {
-						"enum": [
-						  "companyName",
-						  "country",
-						  "displayName",
-						  "givenName",
-						  "jobTitle",
-						  "mail",
-						  "mobilePhone",
-						  "surname",
+		 "/users/{user-id}": {
+      "get": {
+        "tags": [
+          "users.user"
+        ],
+        "summary": "Get entity from users by key",
+        "operationId": "users.user.GetUser",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "path",
+            "description": "key: user-id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "user"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                   "companyName",
+				   "country",
+				   "displayName",
+				   "givenName",
+				   "jobTitle",
+				   "mail",
+				   "mobilePhone",
+				   "surname",
 						  "userPrincipalName",
-						  "onPremisesExtensionAttributes"					  
-						],
-						"type": "string"
-					  }
-					}
-				  }
-				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"$ref": "#/definitions/GraphUser"
-						}
-					}
-				},
-				"deprecated": false
-			}
-		}
+						  "onPremisesExtensionAttributes"	
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/microsoft.graph.user"
+                }
+              }
+            },
+            "links": {
+              "ownedDevices": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "registeredDevices": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "manager": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "directReports": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "memberOf": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "createdObjects": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "ownedObjects": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "licenseDetails": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "extensions": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "outlook": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "messages": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "mailFolders": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "calendar": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "calendars": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "calendarGroups": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "calendarView": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "events": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "people": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "contacts": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "contactFolders": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "inferenceClassification": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "photo": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "photos": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "drive": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "drives": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "planner": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "onenote": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "managedDevices": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "managedAppRegistrations": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "deviceManagementTroubleshootingEvents": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "activities": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "insights": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              },
+              "settings": {
+                "operationId": "users.user.GetUser",
+                "parameters": {
+                  "id": "$request.path.id"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "patch": {
+        "tags": [
+          "users.user"
+        ],
+        "summary": "Update entity in users",
+        "operationId": "users.user.UpdateUser",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "path",
+            "description": "key: user-id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "user"
+          }
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/microsoft.graph.user"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "delete": {
+        "tags": [
+          "users.user"
+        ],
+        "summary": "Delete entity from users",
+        "operationId": "users.user.DeleteUser",
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "path",
+            "description": "key: user-id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "user"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "ETag",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    }
 	},
 
 	"definitions": {
