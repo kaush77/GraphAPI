@@ -21,14 +21,7 @@
 					"text/json",
 					"application/json"
 				],
-				"parameters": [
-					{
-					"name": "onPremisesExtensionAttributes",
-					"in": "query",
-					"description": "Select properties to be returned",
-					"type": "string"
-				  }
-				],
+				"parameters": [],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -39,7 +32,47 @@
 				},
 				"deprecated": false
 			}
-		}, 
+		},
+		"/v1.0/users/{userid}": {
+			"get": {
+				"tags": [
+					"users.user"
+				],
+				"operationId": "users",
+				"consumes": [],
+				"produces": [
+					"text/json",
+					"application/json"
+				],
+				"parameters": [
+				  {
+					"name": "userid",
+					"in": "path",
+					"description": "key: user-id",
+					"required": true,
+					"schema": {
+					  "type": "string"
+					},
+					"x-ms-docs-key-type": "userid"
+				  },
+				  {
+					"name": "onPremisesExtensionAttributes",
+					"in": "query",
+					"description": "Select properties to be returned",
+					"type": "string"
+				  }
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/components/schemas/microsoft.graph.user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
 	},
 
 	"definitions": {
