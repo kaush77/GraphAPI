@@ -1,0 +1,89 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "Microsoft Graph - Example"
+	},
+	"host": "graph.microsoft.com",
+	"schemes": [
+		"https"
+	],
+
+	"paths": {
+		"/v1.0/me": {
+			"get": {
+				"tags": [
+					"Me"
+				],
+				"operationId": "Me",
+				"consumes": [],
+				"produces": [
+					"text/json",
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/GraphUser"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+
+	"definitions": {
+		"Object": {
+			"type": "object",
+			"properties": {}
+		},
+
+		"GraphUser": {
+			"type": "object",
+			"properties": {
+				"companyName": {
+					"type": "string"
+				},
+
+				"country": {
+					"type": "string"
+				},
+
+				"displayName": {
+					"type": "string"
+				},
+
+				"givenName": {
+					"type": "string"
+				},
+
+				"jobTitle": {
+					"type": "string"
+				},
+
+				"mail": {
+					"type": "string"
+				},
+
+				"mobilePhone": {
+					"type": "string"
+				},
+
+				"surname": {
+					"type": "string"
+				},
+
+				"userPrincipalName": {
+					"type": "string"
+				}
+
+			}
+
+		}
+
+	}
+
+}
