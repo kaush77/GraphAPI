@@ -33,7 +33,7 @@
 				"deprecated": false
 			}
 		},
-		"/v1.0/users/{id | userPrincipalName}": {
+		"/v1.0/users/{userPrincipalName}": {
 			"get": {
 				"tags": [
 					"users.user"
@@ -44,7 +44,35 @@
 					"text/json",
 					"application/json"
 				],
-				"parameters": [],
+				"parameters": [
+				  {
+					"name": "user-id",
+					"in": "path",
+					"description": "key: user-id",
+					"required": true,
+					"schema": {
+					  "type": "string"
+					},
+					"x-ms-docs-key-type": "user"
+				  }
+				],
+				"requestBody": {
+				  "description": "Action parameters",
+				  "content": {
+					"application/json": {
+					  "schema": {
+						"type": "object",
+						"properties": {
+						  "userPrincipalName": {
+							"type": "string",
+							"nullable": true
+						  }
+						}
+					  }
+					}
+				  },
+				"required": true,
+				},
 				"responses": {
 					"200": {
 						"description": "OK",
