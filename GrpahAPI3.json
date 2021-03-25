@@ -78,8 +78,10 @@
 
 				"userPrincipalName": {
 					"type": "string"
+				},
+				"extensionAttribute1":{
+					"type": "string"
 				}
-
 			}
 
 		}
