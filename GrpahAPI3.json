@@ -23,19 +23,10 @@
 				],
 				"parameters": [
 					{
-					"name": "$select",
+					"name": "onPremisesExtensionAttributes",
 					"in": "query",
 					"description": "Select properties to be returned",
-					"schema": {
-					  "uniqueItems": true,
-					  "type": "array",
-					  "items": {
-						"enum": [
-						  "onPremisesExtensionAttributes"					  
-						],
-						"type": "string"
-					  }
-					}
+					"type": "string"
 				  }
 				],
 				"responses": {
