@@ -15,7 +15,6 @@
           "Me"
         ],
         "operationId": "Me",
-        "consumes": [],
         "produces": [
           "text/json",
           "application/json"
@@ -28,8 +27,7 @@
               "$ref": "#/definitions/GraphUser"
             }
           }
-        },
-        "deprecated": false
+        }
       }
     },
     "/v1.0/users/{userid}": {
@@ -38,43 +36,23 @@
           "users.user"
         ],
         "operationId": "users",
-        "consumes": [],
         "produces": [
           "text/json",
           "application/json"
         ],
         "parameters": [
           {
-            "name": "userid",
             "in": "path",
-            "description": "key: userid",
+            "name": "userid",
+            "description": "key: user-id",
             "required": true,
-            "type": "string",
-            "x-ms-docs-key-type": "users"
+            "type": "string"
           },
           {
-            "name": "$select",
             "in": "query",
-            "description": "Select properties to be returned",
-            "schema": {
-              "uniqueItems": true,
-              "type": "array",
-              "items": {
-                "enum": [
-                  "companyName",
-                  "country",
-                  "displayName",
-                  "givenName",
-                  "jobTitle",
-                  "mail",
-                  "mobilePhone",
-                  "surname",
-                  "userPrincipalName",
-                  "onPremisesExtensionAttributes"
-                ]
-              }
-            },
-            "type": "string"
+            "name": "$select",
+            "type": "string",
+            "description": "The fields to return"
           }
         ],
         "responses": {
@@ -84,8 +62,7 @@
               "$ref": "#/definitions/GraphUser"
             }
           }
-        },
-        "deprecated": false
+        }
       }
     }
   },
@@ -97,9 +74,6 @@
     "GraphUser": {
       "type": "object",
       "properties": {
-        "userid": {
-          "type": "string"
-        },
         "companyName": {
           "type": "string"
         },
