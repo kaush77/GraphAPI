@@ -53,7 +53,7 @@
 					"schema": {
 					  "type": "string"
 					},
-					"x-ms-docs-key-type": "user"
+					"x-ms-docs-key-type": "users"
 				  },
 				  {
 					"name": "$select",
