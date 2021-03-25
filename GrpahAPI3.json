@@ -38,7 +38,7 @@
 				"tags": [
 					"users.user"
 				],
-				"operationId": "Me",
+				"operationId": "users",
 				"consumes": [],
 				"produces": [
 					"text/json",
