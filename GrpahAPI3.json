@@ -46,17 +46,38 @@
 				],
 				"parameters": [
 				  {
-					"name": "userid",
-					"in": "path",
-					"description": "key: userid",
-					"required": true,
-					"type": "string"
+					"name": "user-id",
+            "in": "path",
+            "description": "key: user-id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "user"
 				  },
 				  {
-					"name": "onPremisesExtensionAttributes",
+					"name": "$select",
 					"in": "query",
 					"description": "Select properties to be returned",
-					"type": "string"
+					"schema": {
+					  "uniqueItems": true,
+					  "type": "array",
+					  "items": {
+						"enum": [
+						  "companyName",
+						  "country",
+						  "displayName",
+						  "givenName",
+						  "jobTitle",
+						  "mail",
+						  "mobilePhone",
+						  "surname",
+						  "userPrincipalName",
+						  "onPremisesExtensionAttributes"					  
+						],
+						"type": "string"
+					  }
+					}
 				  }
 				],
 				"responses": {
