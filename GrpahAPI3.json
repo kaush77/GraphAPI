@@ -48,33 +48,37 @@
 				  {
 					"name": "userid",
 					"in": "path",
+					"description": "key: user-id",
 					"required": true,
-					"type": "string"
+					"schema": {
+					  "type": "string"
+					},
+					"x-ms-docs-key-type": "user"
 				  },
 				  {
-				"name": "$select",
-				"in": "query",
-				"description": "Select properties to be returned",
-				"schema": {
-				  "uniqueItems": true,
-				  "type": "array",
-				  "items": {
-					"enum": [
-					  "companyName",
-					  "country",
-					  "displayName",
-					  "givenName",
-					  "jobTitle",
-					  "mail",
-					  "mobilePhone",
-					  "surname",
-					  "userPrincipalName",
-					  "onPremisesExtensionAttributes"					  
-					],
-					"type": "string"
+					"name": "$select",
+					"in": "query",
+					"description": "Select properties to be returned",
+					"schema": {
+					  "uniqueItems": true,
+					  "type": "array",
+					  "items": {
+						"enum": [
+						  "companyName",
+						  "country",
+						  "displayName",
+						  "givenName",
+						  "jobTitle",
+						  "mail",
+						  "mobilePhone",
+						  "surname",
+						  "userPrincipalName",
+						  "onPremisesExtensionAttributes"					  
+						],
+						"type": "string"
+					  }
+					}
 				  }
-            }
-          }
 				],
 				"responses": {
 					"200": {
