@@ -48,12 +48,8 @@
 				  {
 					"name": "userid",
 					"in": "path",
-					"description": "key: user-id",
-					"required": true,
-					"schema": {
-					  "type": "string"
-					},
-					"x-ms-docs-key-type": "userid"
+					"description": "key: userid",
+					"required": true, 
 				  },
 				  {
 					"name": "onPremisesExtensionAttributes",
