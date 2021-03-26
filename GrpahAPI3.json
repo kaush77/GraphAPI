@@ -1,4 +1,4 @@
-{
+ {
   "swagger": "2.0",
   "info": {
     "version": "v1",
@@ -127,7 +127,13 @@
         "userPrincipalName": {
           "type": "string"
         },
-        "onPremisesExtensionAttributes": {
+        "onPremisesExtensionAttributes": { 
+		  "$ref": "#/definitions/ExtensionAttributes"
+        }
+      }
+    },
+  
+	"ExtensionAttributes": {
           "type": "object",
           "properties": {
             "extensionAttribute1": {
@@ -155,8 +161,6 @@
               "type": "string"
             }
           }
-        }
-      }
     }
   }
 }
