@@ -1,133 +1,156 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "version": "v1",
-    "title": "Microsoft Graph - Example"
-  },
-  "host": "graph.microsoft.com",
-  "schemes": [
-    "https"
-  ],
-  "paths": {
-    "/v1.0/me": {
-      "get": {
-        "tags": [
-          "Me"
-        ],
-        "operationId": "Me",
-        "produces": [
-          "text/json",
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/GraphUser"
-            }
-          }
-        }
-      }
-    },
-    "/v1.0/users/{userid}": {
-      "get": {
-        "tags": [
-          "users.user"
-        ],
-        "operationId": "users",
-        "produces": [
-          "text/json",
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userid",
-            "description": "key: user-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select", 
-            "description": "The fields to return"
-            "schema": {
-              "uniqueItems": true,
-              "type": "array",
-              "items": {
-              "enum": [
-                "companyName",
-                "country",
-                "displayName",
-                "givenName",
-                "jobTitle",
-                "mail",
-                "mobilePhone",
-                "surname",
-                "userPrincipalName",
-                "onPremisesExtensionAttributes"					  
-              ],
-              "type": "string"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/GraphUser"
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "Object": {
-      "type": "object",
-      "properties": {}
-    },
-    "GraphUser": {
-      "type": "object",
-      "properties": {
-        "companyName": {
-          "type": "string"
-        },
-        "country": {
-          "type": "string"
-        },
-        "displayName": {
-          "type": "string"
-        },
-        "givenName": {
-          "type": "string"
-        },
-        "jobTitle": {
-          "type": "string"
-        },
-        "mail": {
-          "type": "string"
-        },
-        "mobilePhone": {
-          "type": "string"
-        },
-        "surname": {
-          "type": "string"
-        },
-        "userPrincipalName": {
-          "type": "string"
-        },
-        "onPremisesExtensionAttributes": {
-          "type": "object",
-          "properties": {
-            "extensionAttribute1": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    }
-  }
+	"swagger": "2.0",
+	"info": {
+		"version": "v1",
+		"title": "Microsoft Graph - Example"
+	},
+	"host": "graph.microsoft.com",
+	"schemes": [
+		"https"
+	],
+
+	"paths": {
+		"/v1.0/me": {
+			"get": {
+				"tags": [
+					"Me"
+				],
+				"operationId": "Me",
+				"consumes": [],
+				"produces": [
+					"text/json",
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/GraphUser"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/v1.0/users/{userid}": {
+			"get": {
+				"tags": [
+					"users.user"
+				],
+				"operationId": "users",
+				"consumes": [],
+				"produces": [
+					"text/json",
+					"application/json"
+				],
+				"parameters": [
+				  {
+					"name": "userid",
+					"in": "path",
+					"description": "key: userid",
+					"required": true,
+					"schema": {
+					  "type": "string"
+					},
+					"x-ms-docs-key-type": "users"
+				  },
+				  {
+					"name": "$select",
+					"in": "query",
+					"description": "Select properties to be returned",
+					"schema": {
+					  "uniqueItems": true,
+					  "type": "array",
+					  "items": {
+						"enum": [
+						  "companyName",
+						  "country",
+						  "displayName",
+						  "givenName",
+						  "jobTitle",
+						  "mail",
+						  "mobilePhone",
+						  "surname",
+						  "userPrincipalName",
+						  "onPremisesExtensionAttributes"					  
+						],
+						"type": "string"
+					  }
+					}
+				  }
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/GraphUser"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+
+	"definitions": {
+		"Object": {
+			"type": "object",
+			"properties": {}
+		},
+
+		"GraphUser": {
+			"type": "object",
+			"properties": {
+				"userid": {
+					"type": "string"
+				},
+				"companyName": {
+					"type": "string"
+				},
+
+				"country": {
+					"type": "string"
+				},
+
+				"displayName": {
+					"type": "string"
+				},
+
+				"givenName": {
+					"type": "string"
+				},
+
+				"jobTitle": {
+					"type": "string"
+				},
+
+				"mail": {
+					"type": "string"
+				},
+
+				"mobilePhone": {
+					"type": "string"
+				},
+
+				"surname": {
+					"type": "string"
+				},
+
+				"userPrincipalName": {
+					"type": "string"
+				},
+				"onPremisesExtensionAttributes":{
+				 "type":"object",
+				 "properties":{
+					"extensionAttribute1":{
+					   "type":"string"
+					}
+				 }
+			  }
+			}
+
+		}
+
+	}
 }
