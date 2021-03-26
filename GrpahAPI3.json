@@ -65,8 +65,7 @@
 					  "items": {
 						"enum": [
 						  "companyName",
-						  "country",
-						  "displayName",
+						  "country", 
 						  "givenName",
 						  "jobTitle",
 						  "mail",
