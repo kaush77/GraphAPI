@@ -62,7 +62,8 @@
               "items": {
                 "enum": [
                   "companyName",
-                  "country", 
+                  "country",
+                  "displayName",
                   "givenName",
                   "jobTitle",
                   "mail",
@@ -130,6 +131,27 @@
           "type": "object",
           "properties": {
             "extensionAttribute1": {
+              "type": "string"
+            },
+			"extensionAttribute2": {
+              "type": "string"
+            },
+			"extensionAttribute3": {
+              "type": "string"
+            },
+			"extensionAttribute4": {
+              "type": "string"
+            },
+			"extensionAttribute5": {
+              "type": "string"
+            },
+			"extensionAttribute6": {
+              "type": "string"
+            },
+			"extensionAttribute7": {
+              "type": "string"
+            },
+			"extensionAttribute8": {
               "type": "string"
             }
           }
