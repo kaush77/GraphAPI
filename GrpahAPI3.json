@@ -50,9 +50,27 @@
           },
           {
             "in": "query",
-            "name": "$select",
-            "type": "string",
+            "name": "$select", 
             "description": "The fields to return"
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+              "enum": [
+                "companyName",
+                "country",
+                "displayName",
+                "givenName",
+                "jobTitle",
+                "mail",
+                "mobilePhone",
+                "surname",
+                "userPrincipalName",
+                "onPremisesExtensionAttributes"					  
+              ],
+              "type": "string"
+              }
+            }
           }
         ],
         "responses": {
